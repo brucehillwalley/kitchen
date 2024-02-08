@@ -1,6 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { client } from "../../client";
 import CarouselSlide from "./CarouselSlide";
+import {Swiper, SwiperSlide} from "swiper/react";
+import SwiperCore, {Navigation} from "swiper";
+
+
+
 
 const Carousel = () => {
   const [isCarouselLoading, setIsCarouselLoading] = useState(false);

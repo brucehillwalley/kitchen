@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+## Project Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contentful Introduction : What is Contentful?
 
-## Available Scripts
+#### In its essence, Contentful is a cloud-based headless CMS designed to provide users with a solution that would help developers and content editors organize and distribute content to any platform.
 
-In the project directory, you can run:
+#### The platform offers powerful APIs for consuming and publishing content, so developers can build apps for every channel. So let’s sum up how it meets the unique demands of digital content:
 
-### `npm start`
+- Contentful is an API-first CMS.
+- Far more features than the traditional CMS.
+- Allows users to store and link to content from multiple sources.
+- Developer’s tools for avoiding manual migration, minimizing custom development, and eliminating content change backlogs.
+- Product owners’ tools for replicating content models, reusing content, and syncing common components.
+- Marketing tools for reaching new audiences across regions, channels, and brands with consistent messaging.
+- Compiles your content in a flexible JSON API.
+- Well-documented APIs and CLI migration tools.
+- SDKs for most of the popular programming languages.
+- Integrated service, without a need of 3rd party plugins.
+- CDN to provide high speeds to users.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Details
+- Creating Content Model  for Image Carousel in Contentful
+- Creating fields for our Content Model
+- Adding data for Image Carousel in Contentful
+- Setting up a boilerplate React Project using Create React App
+- Initial Cleanup and Installing dependencies
+- Creating Contentful client file to fetch data from Contentful
+- Creating API keys in Contentful
+- Creating environment variables (.env.development)
+- Creating the Image Carousel component in React
+- Creating a function to get data from Contentful (getCarouselSlides)
+- Cleaning up the response data coming from Contentful (cleanUpCarouselSlides)
+- Using the loading boolean state (isCarouselLoading)
+- Creating the markup to output the data for Image Carousel
+- Setting up the partials SCSS files for styling
+- Using Swiper to make Image Carousel
+- Adding some styles to Image Carousel component
+- Displaying a loading message on the screen 
+- Creating a Loader Component
+- Styling the Loader component
+- Using the Loader component in Image Carousel component
