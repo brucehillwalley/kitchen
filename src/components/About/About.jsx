@@ -1,55 +1,9 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { client } from "../../client";
+import React, { useContext } from "react";
 import Loader from "../loader/Loader";
-import { marked } from "marked";
-import DOMPurify from "dompurify";
-
-const getHTMLData = (rawData) => {
-  const htmlString = marked(rawData);
-  const sanitizedHTMLString = DOMPurify.sanitize(htmlString);
-  return sanitizedHTMLString;
-};
+import { Context } from "../../context/Context";
 
 const About = () => {
-  const [about, setAbout] = useState({});
-  const [isAboutLoading, setIsAboutLoading] = useState(false);
-
-  const cleanUpAbout = useCallback((rawData) => {
-    const { sys, fields } = rawData;
-    const { id } = sys;
-    const aboutTitle = fields.title;
-    const aboutContent = getHTMLData(fields.content);
-    const aboutImage = fields.image.fields.file.url;
-    const cleanAbout = {
-      id,
-      aboutTitle,
-      aboutContent,
-      aboutImage,
-    };
-    setAbout(cleanAbout);
-  }, []);
-
-  const getAbout = async () => {
-    setIsAboutLoading(true);
-    try {
-      const response = await client.getEntry("4cPys3SxoWXRlkt3wOrWtf");
-
-      console.log(response);
-      setIsAboutLoading(false);
-
-      if (response) {
-        cleanUpAbout(response);
-      } else {
-        setAbout({});
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getAbout();
-  }, []);
+  const { about, isAboutLoading } = useContext(Context);
 
   if (isAboutLoading) {
     return <Loader />;
