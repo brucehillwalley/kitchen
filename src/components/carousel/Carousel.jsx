@@ -1,11 +1,16 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { client } from "../../client";
 import CarouselSlide from "./CarouselSlide";
-import {Swiper, SwiperSlide} from "swiper/react";
-import SwiperCore, {Navigation} from "swiper";
+// core version + navigation, pagination modules:
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import SwiperCore from "swiper";
+// import Swiper and modules styles
+import "swiper/scss";
+import "swiper/scss/navigation";
+import Loader from "../loader/Loader";
 
-
-
+SwiperCore.use([Navigation]);
 
 const Carousel = () => {
   const [isCarouselLoading, setIsCarouselLoading] = useState(false);
@@ -55,21 +60,30 @@ const Carousel = () => {
     getCarouselSlides();
   }, []);
 
-  console.log(carouselSlides);
+if (isCarouselLoading) {
+  return <Loader />
+}
+
+
+//! if there are no slides to display then do not render the component
+if(!Array.isArray(carouselSlides) || !carouselSlides.length) {return null}
 
   return (
-    <div>
-      {carouselSlides.map((item) => {
-        const { id, slideTitle, slideDescription, slideBg } = item;
-        return (
-          <CarouselSlide
-            key={id}
-            slideTitle={slideTitle}
-            slideDescription={slideDescription}
-            slideBg={slideBg}
-          />
-        );
-      })}
+    <div className="carousel">
+      <Swiper navigation>
+        {carouselSlides.map((item) => {
+          const { id, slideTitle, slideDescription, slideBg } = item;
+          return (
+            <SwiperSlide key={id}>
+              <CarouselSlide
+                slideTitle={slideTitle}
+                slideDescription={slideDescription}
+                slideBg={slideBg}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </div>
   );
 };

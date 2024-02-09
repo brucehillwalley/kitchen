@@ -7,6 +7,7 @@ const CarouselSlide = ({ slideTitle, slideDescription, slideBg}) => {
             <div className="textWrap ">
               <h2>{slideTitle}</h2>
               <p>{slideDescription}</p>
+              <a href="/" className="btn">Learn More</a>
             </div>
           </div>
     </div>
